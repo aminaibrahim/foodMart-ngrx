@@ -1,0 +1,41 @@
+<ng-template app-Refcomponent></ng-template>
+
+<div>
+  <!-- <app-error *ngIf="error" [message]="error" (errorevent)="onHandleError()">
+  </app-error> -->
+
+  <div *ngIf="loading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <form
+    [formGroup]="userDetialsForm"
+    (ngSubmit)="onsubmitForm()"
+    *ngIf="!loading && !error"
+  >
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email" />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" />
+    </div>
+
+    <div>
+      <button
+        class="btn btn-success"
+        type="submit"
+        [disabled]="!userDetialsForm.valid"
+      >
+        {{ isLoggingMode ? "login" : "SignUp" }}</button
+      >|
+      <button class="btn btn-success" type="button" (click)="switchMode()">
+        Switch to {{ isLoggingMode ? "SignUp" : "login" }}
+      </button>
+      <div *ngIf="!loading">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+    </div>
+  </form>
+</div>

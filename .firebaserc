@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "recipe-project-200c8": {
+      "hosting": {
+        "foodMart": [
+          "recipe-project-200c8"
+        ]
+      }
+    },
+    "foodmart-18679": {
+      "hosting": {
+        "foodMart": [
+          "foodmart-18679"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "foodmart-18679"
+  }
+}
